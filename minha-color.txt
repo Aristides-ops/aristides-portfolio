@@ -12,3 +12,13 @@ box-shadow: rgba(0, 0, 0, 0.4) 0px 8px 20px,
 
 
 box-shadow: rgba(198, 255, 0, 0.56) 0px 22px 70px 4px;
+
+
+
+
+===================================
+= Comandos de Atualização do site =
+===================================
+git add . 
+git commit -m "Atualização do portfólio" 
+git push

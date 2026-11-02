@@ -1409,9 +1409,7 @@ h1 span {
 
 /* Indicadores de disponibilidade */
 
-.status-dot {
-    animation: motionPulse 2s infinite;
-}
+
 
 /* Elementos que entram durante o scroll */
 
