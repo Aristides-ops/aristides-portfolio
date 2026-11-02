@@ -1,0 +1,280 @@
+/* =====================================
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .navegacao {
+        padding: 17px 5%;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu-link {
+        font-size: 12px;
+    }
+
+    .servicos-caixa,
+    .projeto-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .processo-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .meus_projetos,
+    .meus_projetos-motion,
+    .secao-servicos,
+    .secao-processo {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TELEMÓVEIS
+===================================== */
+
+@media (max-width: 700px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .navegacao {
+        padding: 14px 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        font-size: 11px;
+    }
+
+    .nav-contacto {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .Perfil {
+        min-height: 100vh;
+        padding: 150px 20px 80px;
+    }
+
+    .foto-perfil {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: clamp(32px, 9vw, 45px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-introducao {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .perfil-paragrafo {
+        font-size: 12px;
+    }
+
+    .hero-descricao {
+        font-size: 12px;
+    }
+
+    .hero-botoes {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        width: min(100%, 300px);
+    }
+
+
+    /* SECÇÕES */
+
+    .sobre-caixa {
+        min-height: auto;
+        padding: 75px 20px;
+    }
+
+    .sobre-conteudo {
+        padding: 25px 20px;
+    }
+
+    .sobre-conteudo p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .secao-servicos,
+    .meus_projetos,
+    .meus_projetos-motion,
+    .secao-processo,
+    .secao-ferramentas {
+        padding: 70px 6%;
+    }
+
+    .projeto-titulo,
+    .sobre-caixa h2,
+    .titulo-contato {
+        font-size: 27px;
+    }
+
+    .secao-descricao {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+
+    /* CARTÕES */
+
+    .servicos-caixa,
+    .projeto-caixa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servico-card {
+        min-height: auto;
+    }
+
+    .projeto-imagem {
+        height: 250px;
+    }
+
+    .projeto-video {
+        height: 280px;
+    }
+
+
+    /* PROCESSO */
+
+    .processo-caixa {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    /* FERRAMENTAS */
+
+    .ferramentas-lista {
+        gap: 10px;
+    }
+
+    .ferramentas-lista span {
+        font-size: 11px;
+        padding: 10px 15px;
+    }
+
+
+    /* CONTACTO */
+
+    .caixa-contato-principal {
+        padding: 75px 6%;
+    }
+
+    .caixa-contato {
+        padding: 23px 18px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-cta {
+        padding: 55px 0;
+    }
+
+    .footer-cta h2 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
+
+
+/* =====================================
+   TELEMÓVEIS PEQUENOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu-link {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .footer-cta h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

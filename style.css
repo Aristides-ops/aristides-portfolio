@@ -1,0 +1,1536 @@
+
+/* =====================================
+   CONFIGURAÇÕES GERAIS
+===================================== */
+
+:root {
+    --bg: #0B0B0F;
+    --surface: #15151D;
+    --surface-light: #1C1C26;
+    --primary: #C6FF00;
+    --white: #F5F5F5;
+    --text: #A5A5B3;
+    --border: rgba(255, 255, 255, 0.08);
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+
+/* =====================================
+   NAVEGAÇÃO
+===================================== */
+
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 8%;
+
+    background: rgba(11, 11, 15, 0.88);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+    font-size: 23px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.nav-logo span {
+    color: var(--primary);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.menu-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 400;
+    transition: var(--transition);
+}
+
+.menu-link:hover {
+    color: var(--primary);
+}
+
+.menu-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    bottom: -7px;
+    left: 0;
+    transition: var(--transition);
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+.nav-contacto {
+    text-decoration: none;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    transition: var(--transition);
+}
+
+.nav-contacto:hover {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+
+/* =====================================
+   HERO / PERFIL
+===================================== */
+
+.Perfil {
+    min-height: 100vh;
+    padding: 140px 20px 70px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    position: relative;
+}
+
+.hero-etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    padding: 9px 17px;
+    margin-bottom: 30px;
+
+    font-size: 12px;
+    color: var(--text);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background: #65dc91;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #65dc91;
+}
+
+.foto-perfil {
+    width: 155px;
+    height: 155px;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 15px 60px rgba(198, 255, 0, 0.18);
+
+    margin-bottom: 25px;
+}
+
+.hero-introducao {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(36px, 6vw, 66px);
+    line-height: 1.15;
+    max-width: 850px;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.perfil-paragrafo {
+    font-size: 15px;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.hero-descricao {
+    color: #777784;
+    max-width: 550px;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.hero-botoes {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.botao-principal,
+.botao-secundario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 23px;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+.botao-principal {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+.botao-principal:hover {
+    background: #d9ff55;
+    transform: translateY(-4px);
+}
+
+.botao-secundario {
+    color: var(--white);
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.botao-secundario:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.scroll-indicador {
+    position: absolute;
+    bottom: 30px;
+
+    color: #777784;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 3px;
+
+    transition: var(--transition);
+}
+
+.scroll-indicador:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================
+   ELEMENTOS GERAIS DAS SECÇÕES
+===================================== */
+
+.section-label {
+    color: var(--primary);
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.projeto-titulo,
+.sobre-caixa h2,
+.titulo-contato {
+    font-size: clamp(27px, 4vw, 38px);
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+.secao-descricao {
+    max-width: 600px;
+    margin: 0 auto 45px;
+    text-align: center;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   SOBRE MIM
+===================================== */
+
+.sobre-caixa {
+    min-height: 54vh;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 90px 20px;
+}
+
+.sobre-conteudo {
+    width: min(100%, 700px);
+    margin: 0 auto;
+
+    padding: 35px;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 15px 50px rgba(198, 255, 0, 0.035);
+}
+
+.sobre-conteudo p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 2;
+    text-align: center;
+}
+
+
+/* =====================================
+   SERVIÇOS
+===================================== */
+
+.secao-servicos {
+    padding: 90px 8%;
+}
+
+.servicos-caixa {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.servico-card {
+    position: relative;
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    padding: 30px 25px;
+    min-height: 280px;
+
+    transition: var(--transition);
+}
+
+.servico-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(198, 255, 0, 0.5);
+    background: var(--surface-light);
+}
+
+.servico-numero {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    color: #666674;
+    font-size: 12px;
+}
+
+.servico-icone {
+    font-size: 30px;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.servico-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.servico-card p {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.servico-tags {
+    color: var(--primary);
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+
+/* =====================================
+   PROJETOS DE DESIGN E MOTION
+===================================== */
+
+.meus_projetos,
+.meus_projetos-motion {
+    padding: 90px 8%;
+}
+
+.projeto-caixa {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projeto-card {
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+
+    transition: transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
+}
+
+.projeto-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(198, 255, 0, 0.45);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.projeto-imagem {
+    display: block;
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.projeto-card:hover .projeto-imagem {
+    transform: scale(1.04);
+}
+
+.projeto-info {
+    padding: 20px;
+}
+
+.projeto-categoria {
+    display: inline-block;
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.infro-projeto {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 9px;
+}
+
+.projeto-paragrafo {
+    color: var(--text);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.projeto-video {
+    display: block;
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+    background: #000;
+}
+
+
+/* =====================================
+   PROCESSO DE TRABALHO
+===================================== */
+
+.secao-processo {
+    padding: 90px 8%;
+}
+
+.processo-caixa {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+
+    max-width: 1200px;
+    margin: auto;
+}
+
+.processo-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 25px;
+
+    transition: var(--transition);
+}
+
+.processo-item:hover {
+    border-color: rgba(198, 255, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+.processo-item span {
+    color: var(--primary);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.processo-item h3 {
+    font-size: 16px;
+    margin: 18px 0 10px;
+}
+
+.processo-item p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+
+/* =====================================
+   FERRAMENTAS
+===================================== */
+
+.secao-ferramentas {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.ferramentas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+
+    max-width: 850px;
+    margin: 35px auto;
+}
+
+.ferramentas-lista span {
+    padding: 12px 22px;
+
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 30px;
+
+    font-size: 13px;
+    color: var(--text);
+
+    transition: var(--transition);
+}
+
+.ferramentas-lista span:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.nota-ferramentas {
+    font-size: 11px;
+    color: #777784;
+}
+
+
+/* =====================================
+   FORMULÁRIO DE CONTACTO
+===================================== */
+
+.caixa-contato-principal {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.caixa-contato {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 35px;
+    margin: 35px auto 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+}
+
+.caixa-input {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.caixa-input label {
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.nome-from,
+.caixa-input textarea {
+    width: 100%;
+    padding: 14px 16px;
+
+    background: #0B0B0F;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+
+    outline: none;
+    transition: var(--transition);
+}
+
+.nome-from {
+    height: 50px;
+}
+
+.caixa-input textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.nome-from:focus,
+.caixa-input textarea:focus {
+    border-color: var(--primary);
+}
+
+.nome-from::placeholder,
+.caixa-input textarea::placeholder {
+    color: #777784;
+}
+
+#enviar-mensagem {
+    width: 100%;
+    padding: 14px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--primary);
+    color: var(--bg);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#enviar-mensagem:hover {
+    background: #d9ff55;
+    transform: translateY(-3px);
+}
+
+.form-nota {
+    margin-top: 15px;
+    color: #777784;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.whatsapp-link {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: var(--transition);
+}
+
+.whatsapp-link:hover {
+    opacity: 0.7;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    background: #111318;
+    color: var(--white);
+
+    padding: 80px 8% 25px;
+    margin-top: 20px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* IDENTIDADE */
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 35px;
+    border-bottom: 1px solid #303139;
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: var(--primary);
+}
+
+.availability {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #c4c4ce;
+    font-size: 13px;
+}
+
+
+/* CHAMADA PARA AÇÃO */
+
+.footer-cta {
+    padding: 75px 0;
+    max-width: 650px;
+}
+
+.footer-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.footer-cta h2 {
+    font-size: clamp(42px, 6vw, 75px);
+    line-height: 1.05;
+
+    margin: 20px 0;
+    letter-spacing: -3px;
+}
+
+.footer-cta h2 span {
+    display: block;
+    color: var(--primary);
+}
+
+.footer-description {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 470px;
+    margin-bottom: 25px;
+}
+
+.footer-botao {
+    margin-top: 5px;
+}
+
+
+/* ESPECIALIDADES */
+
+.footer-services {
+    padding: 35px 0;
+    border-top: 1px solid #303139;
+}
+
+.footer-services h3,
+.footer-column h3 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--primary);
+    margin-bottom: 25px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #303139;
+    padding: 18px 0;
+
+    transition: var(--transition);
+}
+
+.service-item span:first-child {
+    color: #777783;
+    font-size: 12px;
+}
+
+.service-item p {
+    flex: 1;
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.service-item span:last-child {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.service-item:hover {
+    padding-left: 12px;
+}
+
+
+/* LINKS */
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+
+    padding: 55px 0;
+    border-bottom: 1px solid #303139;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-column a {
+    color: var(--text);
+    font-size: 13px;
+    text-decoration: none;
+    transition: var(--transition);
+    overflow-wrap: anywhere;
+}
+
+.footer-column a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+
+/* FOOTER INFERIOR */
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding-top: 25px;
+}
+
+.footer-bottom p {
+    color: #777783;
+    font-size: 11px;
+}
+
+.back-to-top {
+    color: var(--primary);
+    font-size: 11px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+/* =====================================
+   RESPONSIVIDADE - TABLETS
+===================================== */
+
+@media (max-width: 1024px) {
+
+    .navegacao {
+        padding: 17px 5%;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    .menu-link {
+        font-size: 12px;
+    }
+
+    .servicos-caixa,
+    .projeto-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .processo-caixa {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .meus_projetos,
+    .meus_projetos-motion,
+    .secao-servicos,
+    .secao-processo {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+}
+
+
+/* =====================================
+   RESPONSIVIDADE - TELEMÓVEIS
+===================================== */
+
+@media (max-width: 700px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    .navegacao {
+        padding: 14px 5%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .nav-logo {
+        display: none;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+        flex-wrap: wrap;
+    }
+
+    .menu-link {
+        font-size: 11px;
+    }
+
+    .nav-contacto {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .Perfil {
+        min-height: 100vh;
+        padding: 150px 20px 80px;
+    }
+
+    .foto-perfil {
+        width: 130px;
+        height: 130px;
+    }
+
+    h1 {
+        font-size: clamp(32px, 9vw, 45px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero-introducao {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .perfil-paragrafo {
+        font-size: 12px;
+    }
+
+    .hero-descricao {
+        font-size: 12px;
+    }
+
+    .hero-botoes {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        width: min(100%, 300px);
+    }
+
+
+    /* SECÇÕES */
+
+    .sobre-caixa {
+        min-height: auto;
+        padding: 75px 20px;
+    }
+
+    .sobre-conteudo {
+        padding: 25px 20px;
+    }
+
+    .sobre-conteudo p {
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .secao-servicos,
+    .meus_projetos,
+    .meus_projetos-motion,
+    .secao-processo,
+    .secao-ferramentas {
+        padding: 70px 6%;
+    }
+
+    .projeto-titulo,
+    .sobre-caixa h2,
+    .titulo-contato {
+        font-size: 27px;
+    }
+
+    .secao-descricao {
+        font-size: 12px;
+        margin-bottom: 30px;
+    }
+
+
+    /* CARTÕES */
+
+    .servicos-caixa,
+    .projeto-caixa {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .servico-card {
+        min-height: auto;
+    }
+
+    .projeto-imagem {
+        height: 250px;
+    }
+
+    .projeto-video {
+        height: 280px;
+    }
+
+
+    /* PROCESSO */
+
+    .processo-caixa {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+
+    /* FERRAMENTAS */
+
+    .ferramentas-lista {
+        gap: 10px;
+    }
+
+    .ferramentas-lista span {
+        font-size: 11px;
+        padding: 10px 15px;
+    }
+
+
+    /* CONTACTO */
+
+    .caixa-contato-principal {
+        padding: 75px 6%;
+    }
+
+    .caixa-contato {
+        padding: 23px 18px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .footer-cta {
+        padding: 55px 0;
+    }
+
+    .footer-cta h2 {
+        font-size: 45px;
+        letter-spacing: -2px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
+
+
+/* =====================================
+   TELEMÓVEIS PEQUENOS
+===================================== */
+
+@media (max-width: 380px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu-link {
+        font-size: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .footer-cta h2 {
+        font-size: 38px;
+    }
+
+}
+
+
+/* =====================================
+   ACESSIBILIDADE
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+
+
+
+
+/* ANIMAÇÕES DE ENTRADA */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Entrada inicial do perfil */
+
+.hero-etiqueta {
+    animation: fadeUp 0.7s ease both;
+}
+
+.foto-perfil {
+    animation: scaleIn 0.9s ease both;
+}
+
+.hero-introducao {
+    animation: fadeUp 0.8s ease 0.15s both;
+}
+
+.Perfil h1 {
+    animation: fadeUp 0.8s ease 0.3s both;
+}
+
+.perfil-paragrafo,
+.hero-descricao {
+    animation: fadeUp 0.8s ease 0.45s both;
+}
+
+.hero-botoes {
+    animation: fadeUp 0.8s ease 0.6s both;
+}
+
+/* Elementos que aparecem durante o scroll */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pequeno atraso nos cartões */
+
+.projeto-card:nth-child(2),
+.servico-card:nth-child(2) {
+    transition-delay: 0.12s;
+}
+
+.projeto-card:nth-child(3),
+.servico-card:nth-child(3) {
+    transition-delay: 0.24s;
+}
+
+/* Respeitar quem prefere movimento reduzido */
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .hero-etiqueta,
+    .foto-perfil,
+    .hero-introducao,
+    .Perfil h1,
+    .perfil-paragrafo,
+    .hero-descricao,
+    .hero-botoes {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
+
+
+/* =========================================
+   MOTION DESIGN — ARISTIDES MANUEL
+========================================= */
+
+:root {
+    --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animações do início */
+
+@keyframes motionFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(45px);
+        filter: blur(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes motionZoom {
+    from {
+        opacity: 0;
+        transform: scale(0.82) rotate(-4deg);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes motionPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(101, 220, 145, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 7px rgba(101, 220, 145, 0);
+    }
+}
+
+/* Entrada sequencial do Hero */
+
+.Perfil .hero-etiqueta {
+    animation: motionFadeUp 0.8s 0.1s both;
+}
+
+.Perfil .foto-perfil {
+    animation: motionZoom 1s 0.25s both;
+}
+
+.Perfil .hero-introducao {
+    animation: motionFadeUp 0.8s 0.4s both;
+}
+
+.Perfil h1 {
+    animation: motionFadeUp 0.9s 0.55s both;
+}
+
+.Perfil .perfil-paragrafo {
+    animation: motionFadeUp 0.8s 0.7s both;
+}
+
+.Perfil .hero-descricao {
+    animation: motionFadeUp 0.8s 0.85s both;
+}
+
+.Perfil .hero-botoes {
+    animation: motionFadeUp 0.8s 1s both;
+}
+
+.Perfil .scroll-indicador {
+    animation: motionFadeUp 0.8s 1.2s both;
+}
+
+/* Indicadores de disponibilidade */
+
+.status-dot {
+    animation: motionPulse 2s infinite;
+}
+
+/* Elementos que entram durante o scroll */
+
+.js-motion .motion-reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    filter: blur(5px);
+
+    transition:
+        opacity 0.8s var(--motion-ease),
+        transform 0.8s var(--motion-ease),
+        filter 0.8s ease;
+
+    transition-delay: var(--motion-delay, 0ms);
+}
+
+.js-motion .motion-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+}
+
+/* Entrada dos cartões */
+
+.js-motion .servico-card.motion-reveal,
+.js-motion .projeto-card.motion-reveal,
+.js-motion .processo-item.motion-reveal {
+    transform: translateY(55px) scale(0.96);
+}
+
+.js-motion .servico-card.motion-reveal.is-visible,
+.js-motion .projeto-card.motion-reveal.is-visible,
+.js-motion .processo-item.motion-reveal.is-visible {
+    transform: none;
+}
+
+/* Manter o hover dos cartões depois da animação */
+
+.js-motion .servico-card.motion-reveal.is-visible:hover,
+.js-motion .processo-item.motion-reveal.is-visible:hover {
+    transform: translateY(-7px);
+}
+
+.js-motion .projeto-card.motion-reveal.is-visible:hover {
+    transform: translateY(-7px);
+}
+
+/* Imagens dos projetos */
+
+.projeto-imagem {
+    transition: transform 0.7s var(--motion-ease);
+}
+
+.projeto-card:hover .projeto-imagem {
+    transform: scale(1.05);
+}
+
+/* Microinterações nos botões */
+
+.botao-principal,
+.botao-secundario,
+.nav-contacto,
+#enviar-mensagem,
+.whatsapp-link {
+    transition:
+        transform 0.3s var(--motion-ease),
+        box-shadow 0.3s ease,
+        filter 0.3s ease,
+        color 0.3s ease;
+}
+
+.botao-principal:hover,
+.botao-secundario:hover,
+.nav-contacto:hover,
+#enviar-mensagem:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+}
+
+/* Ferramentas */
+
+.ferramentas-lista span {
+    transition:
+        transform 0.3s var(--motion-ease),
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Navegação */
+
+.menu-link {
+    transition: color 0.3s ease;
+}
+
+/* Indicador de scroll */
+
+.scroll-indicador {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-indicador:hover {
+    transform: translateY(5px);
+}
+
+/* Acessibilidade */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .js-motion .motion-reveal,
+    .js-motion .motion-reveal.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
